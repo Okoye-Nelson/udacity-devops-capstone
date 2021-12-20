@@ -1,0 +1,15 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: flaskcluster
+  labels:
+    app: flaskcluster
+spec:
+  type: LoadBalancer
+  selector:
+    app: flaskcluster
+  ports:
+    - port: 80
+      targetPort: 80
+      protocol: TCP
